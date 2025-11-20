@@ -47,6 +47,8 @@ fun FormSiswa(
             horizontalAlignment = Alignment.CenterHorizontally
         ){
             OutlinedTextField(
+                singleLine = true,
+                shape = MaterialTheme.shapes.medium,
                 value = textNama,
                 onValueChange = {
                     textNama=it
