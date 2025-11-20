@@ -92,32 +92,33 @@ fun FormSiswa(
 
                 }
             }
-        }
-        HorizontalDivider(
-            modifier = Modifier
-                .padding(all=5.dp)
-                .width(250.dp),
-            thickness=dimensionResource(R.dimen.thickness_divider),
-            color=Color.Blue
-        )
-        OutlinedTextField(
-            value =textAlamat,
-            singleLine = true,
-            shape =MaterialTheme.shapes.medium,
-            modifier=Modifier .width(250.dp),
-            label = {Text(text=stringResource(R.string.alamat))},
-            onValueChange = {
-                textAlamat = it
+            HorizontalDivider(
+                modifier = Modifier
+                    .padding(all=5.dp)
+                    .width(250.dp),
+                thickness=dimensionResource(R.dimen.thickness_divider),
+                color=Color.Blue
+            )
+            OutlinedTextField(
+                value =textAlamat,
+                singleLine = true,
+                shape =MaterialTheme.shapes.medium,
+                modifier=Modifier .width(250.dp),
+                label = {Text(text=stringResource(R.string.alamat))},
+                onValueChange = {
+                    textAlamat = it
+                }
+            )
+            Spacer(modifier= Modifier .height(20.dp))
+            Button(
+                modifier= Modifier
+                    .fillMaxWidth(fraction = 1f),
+                enabled = textAlamat.isNotEmpty(),
+                onClick = {onSubmitButtonClick(listData)}
+            ) {
+                Text(text=stringResource(R.string.submit))
             }
-        )
-        Spacer(modifier= Modifier .height(20.dp))
-        Button(
-            modifier= Modifier
-                .fillMaxWidth(fraction = 1f),
-            enabled = textAlamat.isNotEmpty(),
-            onClick = {onSubmitButtonClick(listData)}
-        ) {
-            Text(text=stringResource(R.string.submit))
         }
+
     }
 }
